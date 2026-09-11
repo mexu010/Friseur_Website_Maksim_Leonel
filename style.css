@@ -1,3 +1,5 @@
+html { scroll-behavior: smooth; }
+
 body {
     margin: 0;
     background-color: #111111;
@@ -6,60 +8,51 @@ body {
 }
 
 nav {
-   position: absolute;
-   top: 20px;
-   width: calc(100% - 80px);
-   box-sizing: border-box;
-   z-index: 10;
-
+    position: absolute;
+    top: 20px;
+    width: calc(100% - 80px);
+    box-sizing: border-box;
+    z-index: 10;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     gap: 30px;
     padding: 20px;
-
-    
+    margin: 20px;
     background-color: rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 15px;
-    margin: 20px;
-}
-    
-    .startseite{
-        position: relative;
-        min-height: 100vh;
-        overflow: hidden;
-    }
-
-    .hintergrund-video{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 1;
-    }
-
-
-
-nav a {
-    color: white;
-    text-decoration: none;
 }
 
-nav a:hover {
-    color: #c5a477;
+nav img { width: 60px; height: 60px; object-fit: contain; }
+nav a { color: white; text-decoration: none; }
+nav a:hover { color: #c5a477; }
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
 }
 
-nav img {
-        width: 60px;
-    height: 60px;
-    object-fit: contain;
+nav .nav-button {
+    padding: 13px 22px;
+    border-radius: 8px;
+    background-color: #c5a477;
+    color: black;
+    font-weight: bold;
+}
+
+nav .nav-button:hover {
+    background-color: white;
+    color: black;
 }
 
 .startseite {
     position: relative;
     min-height: 100vh;
     overflow: hidden;
+    background-color: #000000;
 }
 
 .hintergrund-video {
@@ -77,78 +70,130 @@ nav img {
     z-index: 2;
 }
 
-.abdunklung {
-    position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 2;
-}
+.start-inhalt { position: relative; z-index: 3; padding: 220px 100px 100px; }
+.start-inhalt h1 { margin: 0; font-size: 80px; line-height: 0.95; }
+.start-inhalt h1 span { color: #c5a477; }
+.start-inhalt p { font-size: 20px; line-height: 1.6; }
 
-.start-inhalt {
-    position: relative;
-    z-index: 3;
-    padding: 180px 100px 100px;
-}
-
-.start-inhalt h1 {
-    margin: 0;
-    font-size: 80px;
-    line-height: 0.95;
-}
-
-.start-inhalt h1 span {
-    color: #c5a477;
-}
-
-.start-inhalt p {
-    font-size: 20px;
-    line-height: 1.6;
-}
-
-.buchungs-button{
-display: inline-block;
- margin-top: 30px;
- padding: 15px 30px;
- background-color: #c5a477;
- color: black;
- text-decoration: none;
- font-weight: bold;
- border-radius: 8px;
-}
-
-.buchungs-button:hover {
-    background-color: white;
-    color: black;
-}
-
-.buchung {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 80px 20 px 60px;
-}
-
-.buchung h1{
-    font-size: 48px;
-    margin-bottom: 10px;
-
-}
-
-.buchung > p {
-    color: #bdbdbd;
-    margin-bottom: 30px;
-}
-
-#buchungsformular {
+.kurzinfos {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    margin-top: 35px;
 }
 
-#buchungsformular input,
-#buchungsformular select{
-    padding: 14px;
+.kurzinfos span {
+    padding: 10px 14px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.buchungs-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #c5a477;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
     border-radius: 8px;
+}
+
+.buchungs-button:hover { background-color: white; color: black; }
+
+.leistungen, .galerie, .kontakt, .ueber-mich, .vorteile, .ablauf { padding: 80px 100px; }
+.leistungen h2, .galerie h2, .kontakt h2, .ueber-mich h2, .ablauf h2 { font-size: 42px; margin-bottom: 30px; }
+
+.ueber-mich {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.ueber-bild img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.ueber-text p { color: #c7c7c7; font-size: 18px; line-height: 1.7; }
+.kleine-ueberschrift { color: #c5a477 !important; font-size: 14px !important; font-weight: bold; letter-spacing: 3px; }
+
+.zweiter-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 14px 25px;
+    border: 1px solid #c5a477;
+    border-radius: 8px;
+    color: #c5a477;
+    text-decoration: none;
+}
+
+.zweiter-button:hover { background-color: #c5a477; color: black; }
+
+.leistung {
+    max-width: 350px;
+    padding: 25px;
+    background-color: #1a1a1a;
     border: 1px solid #333333;
+    border-radius: 12px;
+}
+
+.leistung p { margin: 10px 0; color: #c5a477; font-size: 28px; font-weight: bold; }
+.leistung span, .bereich-text { color: #bdbdbd; }
+
+.galerie { background-color: #151515; }
+.galerie-bilder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.galerie-bilder img { width: 100%; height: 420px; object-fit: cover; border-radius: 12px; }
+
+.vorteile {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.vorteil {
+    padding: 30px;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 12px;
+}
+
+.vorteil span { color: #c5a477; font-size: 14px; font-weight: bold; }
+.vorteil h3 { font-size: 24px; margin-bottom: 10px; }
+.vorteil p { color: #bdbdbd; line-height: 1.6; }
+
+.ablauf { text-align: center; background-color: #151515; }
+
+.schritte {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0 15px;
+}
+
+.schritte div { padding: 25px; }
+.schritte strong { display: block; color: #c5a477; font-size: 42px; }
+.schritte p { color: #d0d0d0; }
+
+.kontakt { background-color: #0d0d0d; }
+.kontakt p { margin: 12px 0; color: #d0d0d0; font-size: 18px; }
+.kontakt a { color: #c5a477; text-decoration: none; }
+
+footer { padding: 25px; text-align: center; color: #888888; background-color: #080808; }
+
+.buchung { max-width: 600px; margin: 0 auto; padding: 80px 20px 60px; }
+.buchung h1 { margin-bottom: 10px; font-size: 48px; }
+.buchung > p { margin-bottom: 30px; color: #bdbdbd; }
+#buchungsformular { display: flex; flex-direction: column; gap: 10px; }
+
+#buchungsformular input, #buchungsformular select {
+    padding: 14px;
+    border: 1px solid #333333;
+    border-radius: 8px;
     background-color: #1a1a1a;
     color: white;
     font-size: 16px;
@@ -157,69 +202,29 @@ display: inline-block;
 #buchungsformular button {
     margin-top: 15px;
     padding: 15px;
-    background-color: #c5a477;
-    color: black;
     border: none;
     border-radius: 8px;
+    background-color: #c5a477;
+    color: black;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
 }
 
-#buchungsformular button:hover {
-    background-color: white;
-}
+.zurueck-link { display: inline-block; margin: 25px; color: #c5a477; text-decoration: none; }
 
-.leistungen {
-    padding: 80px 100px;
-}
-
-.leistungen h2 {
-    font-size: 42px;
-    margin-bottom: 30px;
-}
-
-.leistung {
-    background-color: #1a1a1a;
-    border: 1px solid #333333;
-    border-radius: 12px;
-    padding: 25px;
-    max-width: 350px;
-}
-
-.leistung p {
-    font-size: 28px;
-    font-weight: bold;
-    color: #c5a477;
-    margin: 10px 0;
-}
-
-.leistung span {
-    color: #bdbdbd;
-    font-size: 14px;
-}
-
-.kontakt {
-    padding: 80px 100px;
-    background-color: #0d0d0d;
-}
-
-.kontakt h2 {
-    font-size: 42px;
-    margin-bottom: 30px;
-}
-
-.kontakt p {
-    font-size: 18px;
-    color: #d0d0d0;
-    margin: 12px 0;
-}
-
-.kontakt a {
-    color: #c5a477;
-    text-decoration: none;
-}
-
-.kontakt a:hover {
-    color: white;
+@media (max-width: 750px) {
+    nav { width: calc(100% - 30px); margin: 15px; padding: 12px; gap: 12px; flex-wrap: wrap; }
+    nav img { width: 45px; height: 45px; }
+    nav a { font-size: 14px; }
+    .nav-links { gap: 12px; flex-wrap: wrap; justify-content: center; }
+    nav .nav-button { padding: 10px 15px; }
+    .start-inhalt { padding: 220px 25px 80px; }
+    .start-inhalt h1 { font-size: 48px; }
+    .leistungen, .galerie, .kontakt, .ueber-mich, .vorteile, .ablauf { padding: 60px 25px; }
+    .kurzinfos { flex-wrap: wrap; }
+    .ueber-mich, .vorteile, .schritte { grid-template-columns: 1fr; }
+    .ueber-bild img { height: 380px; }
+    .galerie-bilder { grid-template-columns: 1fr; }
+    .galerie-bilder img { height: 360px; }
 }

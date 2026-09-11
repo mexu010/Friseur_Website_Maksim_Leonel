@@ -26,4 +26,4 @@ Name und E-Mail-Adresse
 Button „Termin anfragen“
 Hinweis: „Dein Termin gilt erst nach unserer Bestätigung.“
 
-CHATGPT/ALS LETZTES
+MIT CHATGPT/ALS LETZTES

@@ -12,10 +12,15 @@
 <header>
     <nav>
         <img src="images/logo.png" alt="Logo von Ahmed Omerovic">
-        <a href="#startseite">Startseite</a>
-        <a href="#leistungen">Leistungen & Preise</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#kontakt">Kontakt</a>
+
+        <div class="nav-links">
+            <a href="#startseite">Startseite</a>
+            <a href="#leistungen">Leistungen & Preise</a>
+            <a href="#galerie">Galerie</a>
+            <a href="#kontakt">Kontakt</a>
+        </div>
+
+        <a href="buchen.html" class="nav-button">Termin buchen</a>
     </nav>
 </header>
 
@@ -40,9 +45,32 @@
                     Ein Cut bei Ahmed.
                 </p>
 
-                <a href="#buchung" class="buchungs-button">Termin buchen</a>
+                <a href="buchen.html" class="buchungs-button">Termin buchen</a>
+
+                <div class="kurzinfos">
+                    <span>CHF 15</span>
+                    <span>60 Minuten</span>
+                    <span>Termine ab 18 Uhr</span>
+                </div>
             </div>
 
+        </section>
+
+        <section class="ueber-mich">
+            <div class="ueber-bild">
+                <img src="images/cutPicture1.jpeg" alt="Haarschnitt bei Ahmed">
+            </div>
+
+            <div class="ueber-text">
+                <p class="kleine-ueberschrift">DEIN BARBER</p>
+                <h2>Präzise Cuts in entspannter Atmosphäre.</h2>
+                <p>
+                    Bei Ahmed bekommst du einen sauberen Haarschnitt ohne Stress.
+                    Jeder Termin dauert ungefähr eine Stunde, damit genug Zeit für
+                    deine Wünsche und die Details bleibt.
+                </p>
+                <a href="#galerie" class="zweiter-button">Arbeiten ansehen</a>
+            </div>
         </section>
 
            <section class="leistungen" id="leistungen">
@@ -63,18 +91,53 @@
 
     <div class="galerie-bilder">
 
-        <img src="cutPicture1.jpeg" alt="Haarschnitt von Ahmed">
-
-
+        <img src="images/cutPicture1.jpeg" alt="Haarschnitt von Ahmed von der Seite">
+        <img src="images/cutPicture2.jpeg" alt="Haarschnitt von Ahmed von hinten">
+        <img src="images/cutPicture3.jpeg" alt="Weiterer Haarschnitt von Ahmed">
     </div>
 
-</section>
+        </section>
+
+        <section class="vorteile">
+            <div class="vorteil">
+                <span>01</span>
+                <h3>Persönlich</h3>
+                <p>Du erklärst deinen Wunsch direkt und bekommst einen Cut, der zu dir passt.</p>
+            </div>
+
+            <div class="vorteil">
+                <span>02</span>
+                <h3>Entspannt</h3>
+                <p>Kein voller Salon und kein Zeitdruck. Dein Termin gehört dir.</p>
+            </div>
+
+            <div class="vorteil">
+                <span>03</span>
+                <h3>Fair</h3>
+                <p>Ein kompletter Haarschnitt kostet CHF 15 und dauert etwa 60 Minuten.</p>
+            </div>
+        </section>
+
+        <section class="ablauf">
+            <p class="kleine-ueberschrift">SO FUNKTIONIERT ES</p>
+            <h2>In drei Schritten zum Termin</h2>
+
+            <div class="schritte">
+                <div><strong>1</strong><p>Termin und Uhrzeit auswählen</p></div>
+                <div><strong>2</strong><p>Anfrage mit deinen Daten senden</p></div>
+                <div><strong>3</strong><p>Auf die Bestätigung von Ahmed warten</p></div>
+            </div>
+
+            <a href="buchen.html" class="buchungs-button">Jetzt Termin anfragen</a>
+        </section>
 
         <section class="kontakt" id="kontakt">
 
     <h2>Kontakt</h2>
 
-    <p>Ahmed Omerovic</p>
+    <p><strong>Ahmed Omerovic</strong></p>
+    <p>Montag bis Freitag: 18:00 bis 21:00 Uhr</p>
+    <p>Samstag und Sonntag: nach Verfügbarkeit</p>
     <p>
     Telefon:
     <a href="tel:+41791234567">079 123 45 67</a>
@@ -85,8 +148,13 @@
     <a href="mailto:beispiel@email.ch">beispiel@email.ch</a>
 </p>
     <p>Instagram: @deininstagram</p>
+    <a class="buchungs-button" href="buchen.html">Termin anfragen</a>
 
 </section>
     </main>
+
+    <footer>
+        <p>© 2026 AO KellerFriseur</p>
+    </footer>
   </body>
 </html>

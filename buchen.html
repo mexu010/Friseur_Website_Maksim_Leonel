@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 
 <head>
     <meta charset="UTF-8">
@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <a class="zurueck-link" href="index.html">← Zurück zur Startseite</a>
     <main>
         <section class="buchung">
             <h1> Termin buchen</h1>
@@ -24,25 +25,18 @@
                     <option value="haarschnitt">Haarschnitt – CHF 15</option>
                 </select>
 
-                <label for="datum">datum</label>
+                <label for="datum">Datum</label>
 
                 <input type="date" id="datum" name="datum" required>
 
 
-                <label for="uhrzeit">uhrzeit</label>
+                <label for="uhrzeit">Uhrzeit</label>
 
                 <select id="uhrzeit" name="uhrzeit" required>
                     <option value="">Uhrzeit auswählen</option>
-                    <option value="09:00">09:00</option>
-                    <option value="10:00">10:00</option>
-                    <option value="11:00">11:00</option>
-                    <option value="12:00">12:00</option>
-                    <option value="13:00">13:00</option>
-                    <option value="14:00">14:00</option>
-                    <option value="15:00">15:00</option>
-                    <option value="16:00">16:00</option>
-                    <option value="17:00">17:00</option>
                     <option value="18:00">18:00</option>
+                    <option value="19:00">19:00</option>
+                    <option value="20:00">20:00</option>
                 </select>
 
                 <label for="name">Name</label>
@@ -52,7 +46,7 @@
                 <label for="email">E-Mail</label>
                 <input type="email" id="email" name="email" placeholder="name@email.ch" required>
 
-                <label for="telefon">telefon</label>
+                <label for="telefon">Telefon</label>
                 <input type="tel"
                 id="telefon"
                 name="telefon"
