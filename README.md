@@ -27,3 +27,13 @@ Button „Termin anfragen“
 Hinweis: „Dein Termin gilt erst nach unserer Bestätigung.“
 
 MIT CHATGPT/ALS LETZTES
+
+## Darstellung und Rechtstexte
+
+- `style.css`: `@media` für Tablets (1100px), Handys (750px) und kleine Handys (400px). Zum Ausprobieren das Browserfenster schmaler ziehen.
+- `impressum.html` und `datenschutz.html`: Entwürfe. Alle Angaben in eckigen Klammern vor Veröffentlichung ausfüllen und anhand des tatsächlichen Betriebs prüfen.
+- Echte Adresse, E-Mail und Telefonnummer ergänzen; auch die Beispielkontakte auf der Startseite ersetzen.
+- Hosting, E-Mail-Anbieter, Speicherfristen und mögliche Datenübermittlungen ins Ausland klären.
+- Das Buchungsformular hat noch keinen Versand. Der Button ist deshalb deaktiviert und das Absenden verhindert. Erst nach Anschluss eines tatsächlichen Buchungsdienstes aktivieren und Datenschutztext anpassen.
+- Nach Fertigstellung der Rechtstexte den `noindex`-Meta-Eintrag und die Entwurfshinweise entfernen. `noindex` schützt eine Seite nicht vor öffentlichem Zugriff.
+- Datenschutz-Grundlage: https://www.edoeb.admin.ch/de/datenschutzerklaerungen-im-internet

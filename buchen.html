@@ -16,7 +16,8 @@
             <h1> Termin buchen</h1>
 
             <p> Wähle deinen gewünschten Termin</p>
-            <form id="buchungsformular">
+            <p class="entwurf-hinweis" id="formular-status">Die Online-Anfrage ist noch nicht verfügbar. Dieses Formular ist eine Vorschau und versendet keinen Terminwunsch.</p>
+            <form id="buchungsformular" aria-describedby="formular-status" onsubmit="return false;">
 
                 <label for="leistung">Leistung</label>
 
@@ -53,15 +54,24 @@
                 placeholder="079 123 45 67"
                 >
 
-                <button type="submit">Termin anfragen</button>
+                <button type="submit" disabled>Online-Anfrage noch nicht verfügbar</button>
             </form>
 
             <p class="buchungs-hinweis">
                 Dein Termin ist erst nach meiner Bestätigung gültig.
+                Informationen zum Umgang mit deinen Daten findest du im <a href="datenschutz.html">Datenschutz</a>.
 
             </p>
         </section>
     </main>
+    <footer>
+        <p>© 2026 AO KellerFriseur</p>
+        <div class="footer-links" aria-label="Rechtliche Informationen">
+            <a href="index.html">Startseite</a>
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+    </footer>
 </body>
 
 </html>

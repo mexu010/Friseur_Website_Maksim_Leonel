@@ -1,10 +1,48 @@
 html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+img { max-width: 100%; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 3px solid #c5a477;
+    outline-offset: 4px;
+}
 
 body {
     margin: 0;
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
     background-color: #111111;
     color: white;
     font-family: Arial, sans-serif;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: -20%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(125deg,
+        #0b0b0c 10%,
+        #292019 30%,
+        #55402a 45%,
+        #171615 60%,
+        #35291e 78%,
+        #0b0b0c 95%);
+    animation: hintergrund-flow 20s ease-in-out infinite alternate;
+}
+
+body.rechtliche-seite, .rechtliche-seite footer { background-color: #000000; }
+body.rechtliche-seite::before { content: none; }
+
+@keyframes hintergrund-flow {
+    from { transform: translate(-6%, -4%) rotate(-4deg); }
+    to { transform: translate(6%, 4%) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    body::before { animation: none; }
 }
 
 nav {
@@ -19,10 +57,9 @@ nav {
     gap: 30px;
     padding: 20px;
     margin: 20px;
-    background-color: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 4px;
 }
 
 nav img { width: 60px; height: 60px; object-fit: contain; }
@@ -66,13 +103,15 @@ nav .nav-button:hover {
 .abdunklung {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(115deg,
+        rgba(11, 11, 12, 0.88),
+        rgba(53, 38, 22, 0.55),
+        rgba(0, 0, 0, 0.65));
     z-index: 2;
 }
 
 .start-inhalt { position: relative; z-index: 3; padding: 220px 100px 100px; }
-.start-inhalt h1 { margin: 0; font-size: 80px; line-height: 0.95; }
-.start-inhalt h1 span { color: #c5a477; }
+.start-inhalt h1 { margin: 0; font-size: 56px; line-height: 1.2; overflow-wrap: break-word; }
 .start-inhalt p { font-size: 20px; line-height: 1.6; }
 
 .kurzinfos {
@@ -82,10 +121,7 @@ nav .nav-button:hover {
 }
 
 .kurzinfos span {
-    padding: 10px 14px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
+    padding: 8px 0;
     font-size: 14px;
 }
 
@@ -102,7 +138,7 @@ nav .nav-button:hover {
 
 .buchungs-button:hover { background-color: white; color: black; }
 
-.leistungen, .galerie, .kontakt, .ueber-mich, .vorteile, .ablauf { padding: 80px 100px; }
+.leistungen, .galerie, .kontakt, .ueber-mich, .ablauf { padding: 80px 100px; }
 .leistungen h2, .galerie h2, .kontakt h2, .ueber-mich h2, .ablauf h2 { font-size: 42px; margin-bottom: 30px; }
 
 .ueber-mich {
@@ -120,7 +156,6 @@ nav .nav-button:hover {
 }
 
 .ueber-text p { color: #c7c7c7; font-size: 18px; line-height: 1.7; }
-.kleine-ueberschrift { color: #c5a477 !important; font-size: 14px !important; font-weight: bold; letter-spacing: 3px; }
 
 .zweiter-button {
     display: inline-block;
@@ -145,43 +180,17 @@ nav .nav-button:hover {
 .leistung p { margin: 10px 0; color: #c5a477; font-size: 28px; font-weight: bold; }
 .leistung span, .bereich-text { color: #bdbdbd; }
 
-.galerie { background-color: #151515; }
+.galerie { background-color: rgba(21, 21, 21, 0.45); }
 .galerie-bilder { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .galerie-bilder img { width: 100%; height: 420px; object-fit: cover; border-radius: 12px; }
 
-.vorteile {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
+.ablauf { background-color: rgba(21, 21, 21, 0.45); }
+.ablauf p { max-width: 650px; color: #d0d0d0; line-height: 1.6; }
 
-.vorteil {
-    padding: 30px;
-    background-color: #1a1a1a;
-    border: 1px solid #333333;
-    border-radius: 12px;
-}
-
-.vorteil span { color: #c5a477; font-size: 14px; font-weight: bold; }
-.vorteil h3 { font-size: 24px; margin-bottom: 10px; }
-.vorteil p { color: #bdbdbd; line-height: 1.6; }
-
-.ablauf { text-align: center; background-color: #151515; }
-
-.schritte {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin: 40px 0 15px;
-}
-
-.schritte div { padding: 25px; }
-.schritte strong { display: block; color: #c5a477; font-size: 42px; }
-.schritte p { color: #d0d0d0; }
-
-.kontakt { background-color: #0d0d0d; }
+.kontakt { background-color: rgba(13, 13, 13, 0.65); }
 .kontakt p { margin: 12px 0; color: #d0d0d0; font-size: 18px; }
 .kontakt a { color: #c5a477; text-decoration: none; }
+.kontakt .buchungs-button { color: #111111; }
 
 footer { padding: 25px; text-align: center; color: #888888; background-color: #080808; }
 
@@ -213,18 +222,54 @@ footer { padding: 25px; text-align: center; color: #888888; background-color: #0
 
 .zurueck-link { display: inline-block; margin: 25px; color: #c5a477; text-decoration: none; }
 
+.footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px; }
+.footer-links a, .rechtliches a, .buchungs-hinweis a { color: #c5a477; text-underline-offset: 4px; }
+.footer-links a { padding: 10px 0; }
+.rechtliches { max-width: 800px; margin: 0 auto; padding: 35px 25px 80px; line-height: 1.7; overflow-wrap: anywhere; }
+.rechtliches h1 { font-size: clamp(30px, 6vw, 48px); line-height: 1.2; }
+.rechtliches h2 { margin-top: 35px; font-size: 24px; line-height: 1.3; }
+.rechtliches p, .rechtliches li { color: #d0d0d0; }
+.rechtliches address { font-style: normal; }
+.entwurf-hinweis { padding: 18px; border: 1px solid #c5a477; border-radius: 8px; background: #292019; }
+.platzhalter { color: #f0ca94; }
+.buchungs-hinweis { line-height: 1.6; }
+#buchungsformular input, #buchungsformular select { width: 100%; min-width: 0; }
+#buchungsformular button:disabled { opacity: 0.65; cursor: not-allowed; }
+
+@media (max-width: 1100px) {
+    nav { width: calc(100% - 40px); gap: 16px; }
+    .nav-links { gap: 16px; }
+    .start-inhalt { padding: 220px 40px 80px; }
+    .start-inhalt h1 { font-size: 48px; }
+    .leistungen, .galerie, .kontakt, .ueber-mich, .ablauf { padding: 60px 40px; }
+    .ueber-mich { gap: 30px; }
+    .galerie-bilder img { height: 300px; }
+}
+
 @media (max-width: 750px) {
     nav { width: calc(100% - 30px); margin: 15px; padding: 12px; gap: 12px; flex-wrap: wrap; }
     nav img { width: 45px; height: 45px; }
     nav a { font-size: 14px; }
-    .nav-links { gap: 12px; flex-wrap: wrap; justify-content: center; }
+    .nav-links { order: 3; width: 100%; gap: 8px 16px; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { padding: 8px 0; }
     nav .nav-button { padding: 10px 15px; }
     .start-inhalt { padding: 220px 25px 80px; }
-    .start-inhalt h1 { font-size: 48px; }
-    .leistungen, .galerie, .kontakt, .ueber-mich, .vorteile, .ablauf { padding: 60px 25px; }
+    .start-inhalt h1 { font-size: 36px; }
+    .leistungen, .galerie, .kontakt, .ueber-mich, .ablauf { padding: 60px 25px; }
     .kurzinfos { flex-wrap: wrap; }
-    .ueber-mich, .vorteile, .schritte { grid-template-columns: 1fr; }
+    .ueber-mich { grid-template-columns: 1fr; }
     .ueber-bild img { height: 380px; }
     .galerie-bilder { grid-template-columns: 1fr; }
     .galerie-bilder img { height: 360px; }
+    .leistungen h2, .galerie h2, .kontakt h2, .ueber-mich h2, .ablauf h2 { font-size: 32px; }
+    .buchung { padding-top: 25px; }
+    .buchung h1 { font-size: 36px; }
+    .kontakt a { overflow-wrap: anywhere; }
+}
+
+@media (max-width: 400px) {
+    .start-inhalt { padding: 250px 20px 60px; }
+    .start-inhalt h1 { font-size: 30px; }
+    .leistungen, .galerie, .kontakt, .ueber-mich, .ablauf { padding: 45px 20px; }
+    .galerie-bilder img, .ueber-bild img { height: 300px; }
 }
